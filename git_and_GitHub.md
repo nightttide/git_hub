@@ -2,8 +2,8 @@
 on linux you need to run `apt-get update` then run `apt-get install git`
 TIP: Most linux systems come with git pre-insalled
 
-On windows you can download this program, it will emulate a linux terminal environment
-[git](https://gitforwindows.org/)
+On windows you can download this [this program](https://gitforwindows.org/)
+, it will emulate a linux terminal environment
 
 # Basic usage (aka not editing the repos)
 ## Cloning a repository
