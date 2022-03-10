@@ -1,9 +1,32 @@
-# Install
-on linux you need to run `apt-get update` then run `apt-get install git`
-TIP: Most linux systems come with git pre-insalled
+# Installation
 
-On windows you can download this [this program](https://gitforwindows.org/)
-, it will emulate a linux terminal environment
+## Windows
+
+For installing Git on Windows, you can find the installer [here](https://git-scm.com/download/win).
+
+## Linux
+
+Many Linux distributions already come with Git pre-installed. It may also be installed with your distribution's package manager.
+
+### Ubuntu/Debian:
+
+```
+# apt install git
+```
+
+### Red Hat/CentOS:
+
+```
+# yum install git
+```
+
+### Mac OS
+
+Ensure you have [Homebrew](https://brew.sh/) installed, then:
+
+```
+$ brew install git
+```
 
 # Basic usage (aka not editing the repos)
 ## Cloning a repository
