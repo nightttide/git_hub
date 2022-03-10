@@ -5,6 +5,50 @@ TIP: Most linux systems come with git pre-insalled
 On windows you can download this [this program](https://gitforwindows.org/)
 , it will emulate a linux terminal environment
 
+# Configuration
+
+## First-time Setup
+You will need to perform some basic configuration before using Git for the first time.
+
+```
+git config --global user.name "Mona Lisa"
+git config --global user.email "your_email@example.com"
+git config --global init.defaultBranch main
+```
+
+## Default Editor
+
+Optionally, you may also want to set your default text editor.
+
+```
+git config --global core.editor "C:\path\to\editor.exe"
+```
+
+Verify your currently-set editor with:
+```
+git config –-global core.editor
+```
+
+## GitHub
+
+In order to push your commits to GitHub, you will need to generate an SSH key and upload it to your GitHub account.
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+You will be prompted for a file name, which by default will be id_rsa. After generating your key, find id_rsa.pub and view the contents in a text editor.
+
+Next, on GitHub browse to Settings -> SSH and GPG Keys, and click "New SSH Key". Give the key any title you like, and enter the contents of id_rsa.pub, and save.
+
+You can now verify the key is correctly set up by running:
+
+```
+ssh -T git@github.com
+```
+
+If everything is configured correctly, you should see a message stating that you've successfully authenticated.
+
 # Basic usage (aka not editing the repos)
 ## Cloning a repository
 
@@ -20,27 +64,6 @@ to update that repository simply run this within the directory in was cloned
 git pull
 ```
 
-# Set up
-
-## Setup git user
-
-`git config --global user.name "Mona Lisa"`
-
-`git config --global user.email "your_email@example.com"`
-
-## setting up GitHub account
-
-Create a public and private ssh key, the name id_rsa is good
-
-`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-
-Now take the content of the .pub file and paste them on GitHub in settings
-
-Verify the key by running
-
- `ssh -T git@github.com`
-
-The output should say your authenticated but do not have access to the shell
 
 # Using git for your projects
 
@@ -92,11 +115,3 @@ For GitHub
 git branch -M main
 git push -u origin main
 ```
-
-## Changing the default text editor
-
-`git config --global core.editor "C:\path\to\editor.exe"`
-
-You can also check what the current editor is with
-
-`git config –global core.editor`
